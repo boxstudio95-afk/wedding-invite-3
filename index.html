@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:url('bg1.jpg') center/cover no-repeat;
+    position:relative;
+}
+.hero::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+.hero-content{
+    position:relative;
+    z-index:2;
+    animation:fadeUp 2s ease;
+}
+.hero h1{
+    font-size:34px;
+    color:#ffd700;
+    margin-top:15px;
+    font-family:'Playfair Display';
+}
+
+/* SECTION BG */
+.section{
+    padding:80px 20px;
+    text-align:center;
+}
+.bg2{background:url('bg2.jpg') center/cover fixed}
+.bg3{background:url('bg3.jpg') center/cover fixed}
+.bg4{background:url('bg4.jpg') center/cover fixed}
+
+.overlay{
+    background:rgba(0,0,0,0.6);
+    padding:30px;
+    border-radius:15px;
+    max-width:900px;
+    margin:auto;
+}
+
+/* NAMES */
+.names{
+    display:flex;
+    justify-content:space-between;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+.names div{
+    width:48%;
+    font-size:22px;
+    font-weight:bold;
+}
+.small{
+    font-size:14px;
+    opacity:0.85;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+.gallery img{
+    width:100%;
+    border-radius:12px;
+    transition:0.4s;
+}
+.gallery img:hover{
+    transform:scale(1.08);
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 22px;
+    background:#ff4081;
+    color:#fff;
+    border-radius:30px;
+    text-decoration:none;
+}
+
+/* MUSIC */
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#ff4081;
+    padding:14px;
+    border-radius:50%;
+    cursor:pointer;
+    z-index:999;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(40px)}
+    to{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MUSIC -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+<div class="music-btn" onclick="playMusic()">🎵</div>
+
+<!-- HERO -->
+<div class="hero">
+<div class="hero-content">
+<p class="small">|| श्री गणेशाय नमः ||</p>
+
+<img src="ganpati.png" width="110" style="margin:20px 0;">
+
+<h1>शुभविवाह सोहळा</h1>
+</div>
+</div>
+
+<!-- DETAILS -->
+<div class="section bg2">
+<div class="overlay">
+
+<div class="names">
+<div>
+ची. आकाश
+<p class="small">
+कै. माणिकराव भिकोबा जगताप यांचे नातू <br>
+व सौ. श्री. सुनंदा मधुकर माणिकराव जगताप <br>
+रा. सासवड ता. पुरंदर जि. पुणे यांचे सुपुत्र
+</p>
+</div>
+
+<div>
+चि. सौ. का. अमृता
+<p class="small">
+कै. गणपत बाबुराव जाधव यांची नात <br>
+सौ.श्री. निता रामदास गणपत जाधव <br>
+रा. सासवड ता. पुरंदर जि. पुणे यांची कन्या
+</p>
+</div>
+</div>
+
+<br><br>
+
+<p>
+यांचा शुभविवाह गुरुवार दि.३०/०४/२०२६ रोजी <br>
+सायं. ६ वा ४५ मि. या गोरज मुहूर्तावर करण्याचे योजिले आहे.
+</p>
+
+<br>
+
+<b>हळदी समारंभ</b><br>
+गुरुवार दि. ३०/०४/२०२६ रोजी<br>
+दुपारी १२ वा ३५ मि. ( विवाहस्थळी )
+
+<br><br>
+
+<b>भोजन समारंभ</b><br>
+दु.१ ते ४ वाजेपर्यंत<br>
+संध्याकाळी ७ ते आगमनापर्यंत
+
+</div>
+</div>
+
+<!-- GALLERY -->
+<div class="section bg3">
+<div class="overlay">
+<h2 style="margin-bottom:30px;">Our Gallery</h2>
+
+<div class="gallery">
+<img src="couple1.jpeg">
+<img src="couple2.jpeg">
+<img src="couple3.jpeg">
+<img src="couple4.jpeg">
+<img src="couple5.jpeg">
+<img src="couple6.jpeg">
+</div>
+
+</div>
+</div>
+
+<!-- LOCATION -->
+<div class="section bg4">
+<div class="overlay">
+
+<b>विवाहस्थळ</b><br><br>
+
+<b style="font-size:20px;">
+माऊली गार्डन मंगल कार्यालय
+</b><br>
+
+सासवड-जेजुरी रोड,<br>
+खळद ता. पुरंदर जि. पुणे
+
+<br><br>
+
+<a class="btn" href="https://maps.app.goo.gl/eV1uECLEJYQtPxnM8" target="_blank">
+📍 लोकेशन पाहा
+</a>
+
+<br><br>
+
+<p>🙏🏻 निमंत्रक 🙏🏻</p>
+<p><b>समस्त जगताप परिवार</b></p>
+
+<br>
+
+<a class="btn" href="https://wa.me/?text=आपणास आमच्या शुभविवाह सोहळ्यास सहपरिवार सस्नेह निमंत्रण आहे." target="_blank">
+📱 WhatsApp Share
+</a>
+
+</div>
+</div>
+
+<script>
+function playMusic(){
+    document.getElementById("music").play();
+}
+</script>
+
+</body>
+</html>
